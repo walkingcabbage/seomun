@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/controlNav.js"></script>
+  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+  <title>서문시장야시장</title>
+</head>
+
+<body>
+
+  <div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="#">야시장소개</a>
+      <a href="#">먹거리살거리</a>
+      <a href="#">서문거리예술문화</a>
+      <a href="/noticeList">참여마당</a>
+      <a href="#">입점신청</a>
+    </div>
+
+  </div>
+
+  <div class="wrap">
+    <div id="header"  class="header">
+      <% if(isHeader==true){ %> 
+        <%- include('header') %>
+        <% } else{} %> 
+    </div>
+    <main>
+      <%- body %>
+    </main>
+      <footer id="footer" >
+
+        <%- include('footer') %>
+
+      </footer>
+    
+  </div>
+</body>
+
+</html>

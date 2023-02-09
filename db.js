@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'database-1.cklxqpbgxx7m.ap-northeast-2.rds.amazonaws.com',
   user: 'root',
-  password: '1234',
+  password: 'fc357159',
   database: 'seomun',
   dateStrings: 'date',
 });
@@ -49,13 +49,19 @@ function updateNotice(id, title, content,  callback) {
     callback(row);
   })
 }
-
+function deleteNoticeByid(id, callback) {
+  connection.query(`delete from notice where id=${id}`, (err => {
+    if (err) throw err;
+    callback();
+  }))
+}
 
 module.exports = {
   getNotice,
   insertNotice,
   incrNoticeView,
   getNoticeByid,
-  updateNotice
+  updateNotice,
+  deleteNoticeByid
 
 };

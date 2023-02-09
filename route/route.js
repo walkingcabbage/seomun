@@ -92,5 +92,16 @@ router.post('/updates', (req, res) => {
     })
   })
 })
-
+router.get('/deletenotice', (req, res) => {
+  let id = req.query.id;
+  db.deleteNoticeByid(id, () => {
+    db.getNotice((rows) => {
+      res.render('noticeList', {
+        'isHeader': true,
+        'miniFooter': false,
+        'rows': rows,
+      })
+    })
+  })
+})
 module.exports = router;
